@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/9ed514a1-dc01-4e31-8cda-b25092014635)# TIMELY
+# TIMELY
 
 ⏰**프로젝트명: Timely**
 
