@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="resources/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <title>로그인</title>
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            height: 1000px;
+        }
+        
+        #login {
+            text-align: center;  /* 내부 요소 수평 가운데 정렬 */
+        }
+        
+        #login_container{
+            background-color: white;
+            border: 1px solid gray;
+            padding: 25px;
+            border-radius: 10px;
+            width: 400px;
+            box-sizing: border-box;
+        }
+
+        #login_container button{
+            height: 45px;
+            width: 100%;
+            margin: 0px auto;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            background-color: rgb(255, 243, 224);
+            color: #49433b;
+            cursor: pointer;
+        }
+
+        #login_container button:hover{
+            font-weight: bold;
+            background-color: rgb(253, 238, 214);
+            /* font-size: 17px; */
+        }
+        
+        #userId{
+            border: 1px solid #CCC;
+            height: 60px;
+            width: 350px;
+            border-radius: 8px 8px 0px 0px;
+        }
+        
+        #pw{
+            border: 1px solid #CCC;
+            height: 60px;
+            width: 350px;
+            border-radius: 0px 0px 8px 8px;
+        }
+
+        #idpw_submit_container{
+            margin-top: 14px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 14px;
+        }
+
+        #idpw_submit_container a{
+            color: #49433b;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        #idpw_submit_container a:hover{
+            color: #49433b;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .button_hide {
+            background-color: red !important;
+            color: white !important;
+            border: 2px dashed black;
+            padding: 5px;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    
+    <!-- <%@ include file="/views/common/menubar.jsp" %> -->
+
+    
+    <div id="login">
+        <a href="mainPage.html">
+            <img src="TIMELY.png" alt="Timely 로고">
+        </a>
+
+        <div id="login_container">  
+            <form action="test.do" method="post">
+                <input type="text" id="userId" name="userId" class="inputType" placeholder=" 아이디를 입력하세요." required><br>
+                <button type="button" id="id_delete" class="button_hide">id입력삭제</button>
+                <input type="password" id="pw" name="pw" class="inputType" placeholder=" 비밀번호를 입력하세요." required><br>
+                <button type="button" id="pw_delete" class="button_hide">pw입력삭제</button>
+                <button type="button" id="pw_hide" class="button_hide">pw숨기기</button>
+                <br>
+                <button type="submit" value="login">로그인
+            </form>
+        </div>
+        <div id="idpw_submit_container">
+            <a href="">아이디 찾기</a>
+            <a href="">비밀번호 찾기</a>
+            <a href="">네이버 로그인</a>
+            <a href="sign_agree.html">회원가입</a>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+</body>
+</html>

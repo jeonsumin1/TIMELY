@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <style>
+        #signUpDiv{
+            border: 1px solid lightgray;
+            width: 700px;
+            margin: 0 auto;  /* 수평 중앙 정렬 */
+            padding: 2%;
+            margin-top: 40px;
+            border-radius: 10px;
+            height: auto;
+        }
+        
+        #logo img{
+            width: 130px;
+            height: 35px;
+        }
+
+        #signUpDiv input[type="text"], input[type="password"], input[type="date"], input[type="email"]{
+            height: 45px;
+            border: 1px solid lightgray;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 0 10px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        #signUpDiv #phone, #signUpDiv #postCode{
+            width: 87%;
+            border: 1px solid lightgray;
+            box-sizing: border-box;
+        }
+        
+        .check{
+            height: 45px;
+            width: 12%;
+            background-color: rgb(255, 239, 214);
+            border: 1px solid rgb(211, 201, 185);
+            border-radius: 5px;
+            cursor: pointer;
+            color: #49433b;
+            box-sizing: border-box;
+            margin-left: 10px;
+        }
+        
+        .check:hover{
+            font-weight: bold;
+            background-color: rgb(255, 222, 170);
+            color: #49433b;
+        }
+        /* .gender{
+            display: block;
+        } */
+
+        .gender input[type="radio"]{
+            display: none;
+        }
+        
+        /* .gender 클래스 뒤에 있는 input type이 radio 인 것 중에 label태그만 선택(+label) 
+        인접 형제 선택자
+        */
+        .gender input[type="radio"]+label{
+            display: inline-block; /* label은 inline 속성. 가로 배치는 가능, 박스속성 적용되지 않음. => 버튼처럼 보이게 inline-block으로 설정*/
+            height: 45px;
+            width: 45%;
+            cursor: pointer;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            line-height: 45px; /* 세로 가운데 정렬 */
+            text-align: center; /* 수평 가운데 정렬 */
+            font-size: 14px;
+            color: #49433b;
+            margin-right: 3px;
+        }
+        span{
+            font-size: 14px;
+            margin-left: 3px;
+            margin-right: 17px;
+        }
+        .gender input[type="radio"]:checked+label{
+            background-color: rgb(255, 239, 214);
+            font-weight: bold;
+            border: 1px solid #49433b;
+        }
+        
+        .checkContainer{
+            display: flex; /* 자식요소들이 가로로 나란히 정렬 */
+        }
+        
+        #signUp{
+            height: 50px;
+            width: 100%;
+            background-color: rgb(255, 239, 214);
+            border: 1px solid rgb(211, 201, 185);
+            border-radius: 5px;
+            cursor: pointer;
+            color: #49433b;
+            font-weight: bold;
+            font-size: 15px;
+            margin: 15px 0px;
+        }
+        #signUp:hover{
+            font-weight: bold;
+            background-color: rgb(255, 222, 170);
+            border: 1px solid #49433b;
+            color: #49433b;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="signUpDiv">
+        <div>
+            <a href="mainPage.html" id="logo">
+                <img src="TIMELY_LO.png" alt="Timely 로고">
+            </a>
+        </div>
+        <br><br>
+
+        <div id="signupFrom">
+
+            <input type="text" id="userId" name="userId" placeholder="아이디"><br>
+            <div>
+                <input type="password" id="pw" name="pw" placeholder="비밀번호"><br>
+                <input type="password" id="pwCheck" name="pwCheck" placeholder="비밀번호 확인"><br>
+            </div>            
+            
+            <input type="text" id="userName" name="userName" placeholder="이름"><br>
+            <input type="date" id="birth" name="birth" placeholder="생년월일 8자리">
+            <div class="gender">
+                <span>성별</span>
+                <input type="radio" value="man" id="man" name="gender">
+                <label for="man">남자</label>
+                <input type="radio" value="femail" id="femail" name="gender" >
+                <label for="femail">여자</label>
+            </div><br>
+            
+            <div class="checkContainer">
+                <input type="text" id="phone" name="phone" placeholder="전화번호(-없이 입력)">
+                <!-- 인증 버튼 누르면 API 연결해서 인증할 수 있는 기능 추가 -->
+                <button class="check">인증</button><br>
+            </div>
+            <input type="email" id="email" name="email" placeholder="[선택] 이메일"><br>
+
+            <div>
+                <div class="checkContainer">
+                    <input type="text" id="postCode" name="postCode" placeholder="우편번호">
+                    <!-- 우편번호 찾기 버튼 부르면 우편번호API와 연동 - naver? -->
+                    <button class="check">우편번호 찾기</button><br>
+                </div>                
+                
+                <input type="text" id="address" name="address" placeholder="[선택] 주소"><br>
+                <input type="text" id="datailAddress" name="datailAddress" placeholder="상세 주소">
+            </div>
+        </div>
+
+        <button id="signUp">회원가입</button>
+   
+    </div>
+
+
+</body>
+</html>

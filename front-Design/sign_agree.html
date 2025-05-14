@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agree</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        #agreeDiv{
+            border: 1px solid lightgray;
+            width: 450px;
+            margin: 0 auto;  /* 수평 중앙 정렬 */
+            padding: 2%;
+            margin-top: 60px;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        input[type="checkbox"]{
+            width: 20px;
+            height: 20px;
+            border-radius: 100px;
+            border: 1px solid #49433b;
+            background-color: white;
+        }
+        
+        #agreeDiv #agree{
+            height: 45px;
+            width: 100%;
+            margin: 0px auto;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            background-color: rgb(255, 243, 224);
+            color: #49433b;
+            cursor: pointer;
+        }
+        #agreeDiv #agree:hover{
+            font-weight: bold;
+            background-color: rgb(253, 238, 214);
+        }
+
+        #logo img{
+            width: 130px;
+            height: 35px;
+        }
+
+        .agree_container{
+            padding: 2%;
+            margin: 15px 0px 0px 25px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: gray;
+            width: 400px;
+            height: 100px;
+            resize: none;
+            box-sizing: border-box;
+            border: 1px solid lightgray;
+        }
+
+        .divText{
+            font-size: 14px;
+            color: gray;
+            width: 400px;
+            padding: 1%;
+            margin: 10px 0px 0px 25px;            
+        }
+
+        .agree_choice{
+            font-size: 12px;
+            color: gray;
+        }
+        .agree_o{
+            font-size: 12px;
+            color: green;  
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="agreeDiv">
+        <a href="mainPage.html" id="logo">
+            <img src="TIMELY_LO.png" alt="Timely 로고">
+        </a>
+        <br><br>
+        <div>
+            <input type="checkbox" id="all"></input>
+            <label for="all">전체 동의하기</label><br>
+            <div class="divText">
+                실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.
+            </div>
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" id="agree1" name="agree1"></input> 
+            <label for="agree1">
+                <span class="agree_o">[필수]</span> 
+                <span>TIMELY 이용약관</span><br>
+            </label>
+            <textarea class="agree_container" readonly>이용약관 내용 들어갈 예정</textarea>
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" id="agree2" name="agree2"></input> 
+            <label for="agree2">
+                <span class="agree_o">[필수]</span> 
+                <span>개인정보 수집 및 이용</span><br>
+            </label>
+            <textarea class="agree_container" readonly>이용약관 내용 들어갈 예정</textarea>
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" id="event" name="event"></input> 
+            <label for="event">
+                <span class="agree_choice">[선택]</span> 
+                <span>이벤트・혜택 정보 수신</span>
+            </label>
+            <br>
+            <textarea class="agree_container" readonly>이용약관 내용 들어갈 예정</textarea>
+        </div>
+        <br>
+        <div>
+            <button type="submit" value="login" id="agree">다음</button>
+        </div>
+
+    </div>
+
+
+    <script>
+        
+        // 전체동의 
+        
+        
+        
+        // 약관동의 후 페이지 이동
+        $("#agree").on("click", function(){
+            var agree1 = $("#agree1"); 
+            var agree2 = $("#agree2"); 
+
+            // 필수 항목 동의한 경우에만 넘어가도록
+            if(agree1.prop("checked") && agree2.prop("checked")){
+                window.location.href = "sign_up.html";
+            } else{
+                alert("필수항목에 동의해 주십시오.");
+            }
+        });
+
+
+        
+    </script>
+
+</body>
+</html>
